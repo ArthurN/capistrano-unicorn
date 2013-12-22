@@ -84,7 +84,7 @@ module CapistranoUnicorn
     #
     def try_unicorn_user
       if unicorn_user = fetch(:unicorn_user)
-        [:sudo, '-u', unicorn_user]
+        [:su, '-l', unicorn_user]
       else
         nil
       end
